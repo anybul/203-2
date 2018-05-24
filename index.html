@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=960">
+    <link href="../../old-framework/widgets/2.0.1/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../old-framework/widgets/2.0.1/production.min.js"></script>
+
+<style type="text/css">
+#field{/*background-image:url(source/step1-2.jpg);background-size:100%;*/}
+#field.finished[data-task="4"] .final-text {
+    -webkit-animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
+    animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
+}
+@-webkit-keyframes clickable-right-anim{
+    0% {
+        background-color: #4df0e5;
+        box-shadow: 0 0 0 2px #a4f8f2;
+    }
+    100% {
+        background-color: #ffffff;
+        box-shadow: #a4f8f2 0 0 8px 2px;
+    }
+}
+@keyframes clickable-right-anim{
+    0% {
+        background-color: #4df0e5;
+        box-shadow: 0 0 0 2px #a4f8f2;
+    }
+    100% {
+        background-color: #ffffff;
+        box-shadow: #a4f8f2 0 0 8px 2px;
+    }
+}
+.clickable .inner-element, .clickable.selected.clickable-wrong .inner-element {
+    line-height: 25px;
+}
+
+#description{z-index:1;}
+.step{display:none;}
+.step.fake-step{display:block}
+
+#draggingLetters0 {
+    top: 73px;
+    left: 300px;
+}
+#field[data-task="3"]#draggingLetters0{
+    left: 270px;
+}
+@-webkit-keyframes stepanim{
+	10%{
+		box-shadow: 0px 0px 10px 0 rgba(36,221,208,1);
+		background-color: rgba(36,221,208,1);
+		border-color: rgba(36,221,208,1);
+	}
+}
+@keyframes stepanim{
+	10%{
+		box-shadow: 0px 0px 10px 0 rgba(36,221,208,1);
+		background-color: rgba(36,221,208,1);
+		border-color: rgba(36,221,208,1);
+	}
+}
+.step-animation{
+	animation: stepanim 1s linear .5s alternate;
+    -webkit-animation: stepanim .5s linear 1 alternate;
+}
+#image0{
+	top: 76px;
+    /*opacity: 0.5;*/
+    left: 187px;
+    width: 596px;
+    height: 506px;
+    background-image: url(img/01.jpg);
+}
+#field[data-task="3"] #image0, #field[data-task="4"] #image0{
+	background-image: url(img/02.jpg);
+    width: 796px;
+    height: 530px;
+    top: 69px;
+    left: 130px;
+}
+#image1{
+    top: 76px;
+    left: 416px;
+    font-size: 28px;
+    font-weight: 800;
+	letter-spacing:1.95px;
+    text-transform: uppercase;
+	color:#2d2d2d;
+}
+.dl-word-0{
+	top:80px;
+}
+.dl-letter, .dl-letter-target{
+	width:50px;
+	height:60px;
+	line-height:50px;
+	text-align:center;
+	text-transform: uppercase;
+	font-size: 30px;
+    font-weight: bold;
+	color:#01A594;
+	padding-top: 4px;
+}
+.dl-letter[data-place="0"],.dl-letter-target-0{
+	left:304px;
+}
+.dl-letter[data-place="1"],.dl-letter-target-1{
+	left:364px;
+}
+.dl-letter[data-place="2"],.dl-letter-target-2{
+	left:424px;
+}
+.dl-letter[data-place="3"],.dl-letter-target-3{
+	left:484px;
+}
+.dl-letter[data-place="4"],.dl-letter-target-4{
+	left:544px;
+}
+.dl-letter[data-place="5"],.dl-letter-target-5{
+	left:604px;
+}
+.dl-letter[data-place="6"],.dl-letter-target-6{
+	left:664px;
+}
+
+#field[data-task="3"] .dl-letter[data-place="0"], #field[data-task="3"] .dl-letter-target-0{
+	left:275px;
+}
+#field[data-task="3"] .dl-letter[data-place="1"],#field[data-task="3"] .dl-letter-target-1{
+	left:335px;
+}
+#field[data-task="3"] .dl-letter[data-place="2"],#field[data-task="3"] .dl-letter-target-2{
+	left:395px;
+}
+#field[data-task="3"] .dl-letter[data-place="3"],#field[data-task="3"] .dl-letter-target-3{
+	left:455px;
+}
+#field[data-task="3"] .dl-letter[data-place="4"],#field[data-task="3"] .dl-letter-target-4{
+	left:515px;
+}
+#field[data-task="3"] .dl-letter[data-place="5"],#field[data-task="3"] .dl-letter-target-5{
+	left:575px;
+}
+#field[data-task="3"] .dl-letter[data-place="6"],#field[data-task="3"] .dl-letter-target-6{
+	left:635px;
+}
+
+.clickable{
+	width:230px;
+	cursor:pointer;
+	-webkit-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+}
+.clickable .inner-element{
+	position:relative;
+	font-size: 24px;
+	cursor:pointer;
+	display: table-cell;
+    vertical-align: middle;
+	text-align:center;
+	width:230px;
+}
+#clickable1,#clickable3{
+	left: 33px;
+}
+#clickable2,#clickable4{
+	left: 693px;
+}
+
+#clickable2{
+	
+}
+#clickable1,#clickable2{
+	top:200px;
+	height:77px;
+}
+#clickable1 .inner-element,#clickable2 .inner-element{
+	height:77px;
+}
+#clickable3,#clickable4{
+	top: 302px;
+	height:100px;
+}
+#clickable3 .inner-element,#clickable4 .inner-element{
+	height:100px;
+}
+#field.finished .clickable {display:none;}
+#field.finished .clickable.selected{
+	display:block;
+    top: 123px;
+    left: 365px;
+	border: none;
+	transition-duration:1s;
+	cursor:default;
+    background-color: #ffffff;
+}
+#field.finished .clickable.selected .inner-element{
+	color:#2D2C2A;
+	cursor:default;
+}
+#field[data-task="2"] #checkButton, #field[data-task="4"] #checkButton{
+	display:none;
+}
+#field[data-task="2"].finished #checkButton{
+	display:block;
+}
+#field[data-task="4"].finished #description{
+	opacity:0;
+	transition-duration:1s;
+	
+}
+.draggable.clickable-wrong, .draggable.clickable-wrong:hover{border-bottom-color: #f48154;}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
+	#field[data-task="1"] #image0, #field[data-task="2"] #image0{
+		background-image: url(img/01@2x.jpg);
+	}
+	#field[data-task="3"] #image0, #field[data-task="4"] #image0{
+		background-image: url(img/02@2x.jpg);
+	}
+}
+
+</style>
+
+<script type="text/javascript">
+
+$(document).mousedown(function(){
+    $('.point-wrong').removeClass('point-wrong');
+});
+test_clickable.onFinish = function(){
+	$('.clickable').unbind();
+};
+var test_fakesteps = {
+	create:function(){
+		result = [];
+		for(var i=0;i<task.length-1;i+=2){
+			var step = $('<div></div>').addClass('step').addClass('fake-step');
+			var stepnum = Math.floor((globalVars.currentTask-1) / 2 );
+			//console.log(stepnum);
+			if(stepnum > i/2){
+				step.addClass('right');
+			} else if(stepnum == i/2){
+				step.addClass('current');
+				step.html(stepnum+1);
+			} else {
+				step.html((i/2)+1);
+			}
+			result.push(step);
+		}
+		
+		return result;
+	},
+	onFinish:function(){
+		if(globalVars.currentTask%2==0){
+			$('.fake-step:eq('+((globalVars.currentTask/2)-1)+')').addClass('right').addClass('step-animation').html('');
+		}
+		
+	}
+};
+
+var task=[{},
+// step1
+{
+    "description":"Кто это?",
+	"button":{},
+	"nextStepDelay":2000,
+	"test_fakesteps":[],
+	"test_images":[
+		{"style":{}}
+		
+	],
+	"test_dragging_letters": [
+		{"right":"геолог","default":"огогел"}
+	]
+
+	
+}, //step2
+{
+	"description":"Что он делает?",
+	"button":{"successText":"Дальше"},
+	//"nextStepDelay":3000,
+	"test_fakesteps":[],
+	"test_preloadimg":['img/02.jpg','img/02@2x.jpg'],
+	"test_images":[
+		{},
+		{"value":"геолог"}
+	],
+	"test_clickable":[
+		{"autocheck":true},
+		{"value":"выкачивает нефть<br>из-под земли", "classes":""},
+		{"value":"делает из нефти пластмассу", "classes":""},
+		{"value":"ищет полезные ископаемые,<br>в&nbsp;том числе нефть", "classes":"", "right":true},
+		{"value":"строит скважину, чтобы добраться до&nbsp;нефти", "classes":""}
+	]
+
+	
+},
+//step3
+{
+    "description":"Кто это?",
+	"button":{},
+	"nextStepDelay":2000,
+	"test_preloadimg":[],
+	"test_fakesteps":[],
+	"test_images":[
+		{"style":{}}
+		
+	],
+	"test_dragging_letters": [
+		{"right":"буровик","default":"икробув"}
+	]
+},
+//step 4
+{
+	"description":"Что он делает?",
+	"button":{"successText":"Дальше"},
+	"finalText":"Задание выполнено!",
+	"nextStepDelay":3000,
+	"test_fakesteps":[],
+	"test_images":[
+		{},
+		{"value":"буровик","style":{"left":"400px"}}
+	],
+	"test_clickable":[
+		{"autocheck":true},
+		{"value":"выкачивает нефть<br>из-под земли", "classes":""},
+		{"value":"делает из нефти пластмассу", "classes":""},
+		{"value":"ищет полезные ископаемые,<br>в&nbsp;том числе нефть", "classes":""},
+		{"value":"строит скважину, чтобы добраться до&nbsp;нефти", "classes":"", "right":true}
+	]
+
+	
+}
+]
+</script>
+
+</head>
+<body>
+</body>
+</html>
