@@ -3,14 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=960">
-    <link href="../../old-framework/widgets/2.0.1/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../../old-framework/widgets/2.0.1/production.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="production.min.js"></script>
 
 <style type="text/css">
 #field{/*background-image:url(source/step1-2.jpg);background-size:100%;*/}
 #field.finished[data-task="4"] .final-text {
     -webkit-animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
     animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
+}
+#field[data-task="1"].finished #checkButton, #field[data-task="3"].finished #checkButton,#field[data-task="4"].finished #checkButton{
+	display:none;
 }
 @-webkit-keyframes clickable-right-anim{
     0% {
@@ -81,11 +84,11 @@
     left: 130px;
 }
 #image1{
-    top: 76px;
-    left: 416px;
+    top: 95px;
+    left: 424px;
     font-size: 28px;
-    font-weight: 800;
-	letter-spacing:1.95px;
+    font-weight: 700;
+	/*letter-spacing:1.95px;*/
     text-transform: uppercase;
 	color:#2d2d2d;
 }
@@ -190,7 +193,7 @@
 #field.finished .clickable {display:none;}
 #field.finished .clickable.selected{
 	display:block;
-    top: 123px;
+    top: 143px;
     left: 365px;
 	border: none;
 	transition-duration:1s;
@@ -321,7 +324,7 @@ var task=[{},
 	"test_fakesteps":[],
 	"test_images":[
 		{},
-		{"value":"буровик","style":{"left":"400px"}}
+		{"value":"буровик","style":{"left":"440px"}}
 	],
 	"test_clickable":[
 		{"autocheck":true},
