@@ -114,12 +114,16 @@
 }
 #image1{
     top: 95px;
-    left: 424px;
+    left: 418px;
     font-size: 28px;
     font-weight: 700;
-	/*letter-spacing:1.95px;*/
+	letter-spacing:1.95px;/**/
     text-transform: uppercase;
 	color:#2d2d2d;
+}
+.dragging-letters-right .dragging-letters-draggable,
+.dragging-letters-right .dragging-letters-droppable{
+    letter-spacing:1.95px;
 }
 .dl-word-0{
 	top:80px;
@@ -228,6 +232,9 @@
 	transition-duration:1s;
 	cursor:default;
     background-color: #ffffff;
+}
+#field[data-task="4"].finished .clickable.selected {
+	left: 395px;
 }
 #field.finished .clickable.selected .inner-element{
 	color:#2D2C2A;
@@ -353,7 +360,7 @@ var task=[{},
 	"test_fakesteps":[],
 	"test_images":[
 		{},
-		{"value":"буровик","style":{"left":"440px"}}
+		{"value":"буровик","style":{"left":"434px"}}
 	],
 	"test_clickable":[
 		{"autocheck":true},
