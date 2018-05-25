@@ -8,6 +8,35 @@
 
 <style type="text/css">
 #field{/*background-image:url(source/step1-2.jpg);background-size:100%;*/}
+@-webkit-keyframes finished-button{
+    0% {
+        box-shadow: 0px 0px 15px 0 rgba(36,221,208,1);
+    }
+    50% {
+        box-shadow: 0px 0px 0px 0 rgba(36,221,208,1);
+    }
+    100% {
+        box-shadow: 0px 0px 15px 0 rgba(36,221,208,1);
+    }
+}
+@keyframes finished-button{
+    0% {
+        box-shadow: 0px 0px 15px 0 rgba(36,221,208,1);
+    }
+    50% {
+        box-shadow: 0px 0px 0px 0 rgba(36,221,208,1);
+    }
+    100% {
+        box-shadow: 0px 0px 15px 0 rgba(36,221,208,1);
+    }
+}
+
+#field.finished .button {
+    background-color: #24ddd0;
+    animation: finished-button 1s infinite linear 0.5s;
+    -webkit-animation: finished-button 1s infinite linear 0.5s;
+}
+
 #field.finished[data-task="4"] .final-text {
     -webkit-animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
     animation: zadanie-vypolneno-2 6.2s 1 ease-in-out;
